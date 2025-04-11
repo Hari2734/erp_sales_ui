@@ -43,6 +43,7 @@ const SalesEntry = () => {
   const outstandingAmount = totalAmount - (parseFloat(form.paidAmount) || 0);
 
   return (
+    <>
     <div className="sales-entry-container">
       <h2>Sales Entry</h2>
 
@@ -157,25 +158,27 @@ const SalesEntry = () => {
           </tr>
         </tbody>
       </table>
-      <div className="footer-button-group">
-        <button className="btn btn-primary">
-          <span className="material-symbols-outlined">add_circle</span>
-          New
-        </button>
-        <button className="btn btn-warning">
-          <span className="material-symbols-outlined">save</span>
-          Save
-        </button>  
-        <button className="btn btn-danger">
-          <span className="material-symbols-outlined">delete</span>
-          Delete
-        </button>
-        <button className="btn btn-success">
-          <span className="material-symbols-outlined">print</span>
-          Print
-        </button>
-      </div>
+      
     </div>
+    <div className="footer-button-group">
+    <button className="btn btn-primary">
+      <span className="material-symbols-outlined">add_circle</span>
+      New
+    </button>
+    <button className="btn btn-warning">
+      <span className="material-symbols-outlined">save</span>
+      Save
+    </button>  
+    <button className="btn btn-danger">
+      <span className="material-symbols-outlined">delete</span>
+      Delete
+    </button>
+    <button className="btn btn-success">
+      <span className="material-symbols-outlined">print</span>
+      Print
+    </button>
+  </div>
+  </>
   );
 };
 
