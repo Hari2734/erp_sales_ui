@@ -31,7 +31,7 @@
 // }
 
 import React, { useState, useEffect } from 'react';
-import './ErpSales.css';
+import '../styles/ErpSales.css'; // Assuming you have a CSS file for styling
 import data from './data.json';
 
 const SalesForm = () => {

@@ -1,20 +1,10 @@
 .top-toolbar {
-  background-color: #ddd;
-  padding: 10px;
-  border-bottom: 1px solid #bbb;
+  background-color: #fff;
+  padding: 15px;
   display: flex;
   gap: 10px;
+  position: sticky;
+  top: 0px;
+  justify-content: right;
 }
 
-.top-toolbar button {
-  padding: 6px 12px;
-  border: none;
-  background-color: #4285f4;
-  color: white;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.top-toolbar button:hover {
-  background-color: #3367d6;
-}

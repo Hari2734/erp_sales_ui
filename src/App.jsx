@@ -10,7 +10,9 @@ export default function App() {
       <Sidebar />
       <div className="main-panel">
         <TopToolbar />
-        <SalesForm />
+        <div className="content">
+          <SalesForm />
+        </div>
       </div>
     </div>
   );
