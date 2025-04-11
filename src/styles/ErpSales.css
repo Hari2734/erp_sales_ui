@@ -25,11 +25,12 @@
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1px;
+  gap: 0px;
   margin-bottom: 30px;
+  background-color: #f4f4f4;
 }
 
-.form-grid label {
+.form-grid > label {
   display: inline-flex;
   flex-direction: row;
   font-weight: 500;
@@ -40,11 +41,11 @@
   white-space:normal;
   word-break: initial;
   justify-content: space-between;
-  background-color: #f4f4f4;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  border: 1px solid #fff;
 }
 
 .form-grid input[type="text"],
@@ -88,6 +89,7 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: #f4f4f4;
+  border: 1px solid #fff;
 }
 .radio-group > label
 {
@@ -107,7 +109,10 @@
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
-
+.sales-table tr td:nth-child(3)
+{
+  width: 80px;
+}
 .sales-table th,
 .sales-table td {
   padding: 8px;
