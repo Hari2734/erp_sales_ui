@@ -1,50 +1,21 @@
-// import React from "react";
-// import "../styles/SalesForm.css";
-
-// export default function SalesForm() {
-//   return (
-//     <div className="sales-form">
-//       <h2>Sales Entry</h2>
-//       <form>
-//         <div className="form-group">
-//           <label>Customer Name</label>
-//           <input type="text" placeholder="Enter customer name" />
-//         </div>
-//         <div className="form-group">
-//           <label>Invoice No</label>
-//           <input type="text" placeholder="Enter invoice number" />
-//         </div>
-//         <div className="form-group">
-//           <label>Date</label>
-//           <input type="date" />
-//         </div>
-//         <div className="form-group">
-//           <label>Amount</label>
-//           <input type="number" placeholder="Enter amount" />
-//         </div>
-//         <div className="form-actions">
-//           <button type="submit">Submit</button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
 import React, { useState, useEffect } from 'react';
 import '../styles/ErpSales.css'; // Assuming you have a CSS file for styling
 import data from './data.json';
 
-const SalesForm = () => {
-  // State for form fields
+const SalesEntry = () => {
   const [form, setForm] = useState({
+    salesOrderNo: '',
+    salesDate: '2023-09-19',
     customerId: '',
-    salespersonId: '',
-    installerId: '',
+    customerActualNo: '',
+    paidAmount: '',
+    settlementDate: '',
     warehouseId: '',
     isBorrowed: false,
+    taxType: 'intno',
+    taxOption: 'Exempt',
   });
 
-  // State for sales item
   const [salesItem, setSalesItem] = useState({
     productId: '',
     quantity: 0,
@@ -52,7 +23,6 @@ const SalesForm = () => {
     subtotal: 0,
   });
 
-  // Update price and subtotal when product or quantity changes
   useEffect(() => {
     const product = data.products.find(p => p.id === salesItem.productId);
     const price = product ? product.price : 0;
@@ -60,49 +30,70 @@ const SalesForm = () => {
     setSalesItem(prev => ({ ...prev, price, subtotal }));
   }, [salesItem.productId, salesItem.quantity]);
 
-  // Handle input changes for form fields
   const handleFormChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
   };
 
-  // Handle changes in sales item row
   const handleItemChange = (field, value) => {
     setSalesItem(prev => ({ ...prev, [field]: value }));
   };
 
+  const taxAmount = form.taxOption === 'Added' ? salesItem.subtotal * 0.1 : 0;
+  const totalAmount = salesItem.subtotal + taxAmount;
+  const outstandingAmount = totalAmount - (parseFloat(form.paidAmount) || 0);
+
   return (
-    <div className="erp-sales-container">
+    <div className="sales-entry-container">
       <h2>Sales Entry</h2>
 
-      <div className="form-section">
-        <label>Customer:
+      <div className="form-grid">
+        <label>
+          Sales Order No.
+          <input type="text" value={form.salesOrderNo} onChange={e => handleFormChange('salesOrderNo', e.target.value)} />
+        </label>
+        <label>
+          Sales Date
+          <input type="date" value={form.salesDate} onChange={e => handleFormChange('salesDate', e.target.value)} />
+        </label>
+        <label>
+          Customer Code
           <select value={form.customerId} onChange={e => handleFormChange('customerId', e.target.value)}>
             <option value="">Select</option>
-            {data.customers.map(customer => (
-              <option key={customer.id} value={customer.id}>{customer.name}</option>
+            {data.customers.map(c => (
+              <option key={c.id} value={c.id}>{c.name}</option>
             ))}
           </select>
         </label>
-
-        <label>Salesperson:
-          <select value={form.salespersonId} onChange={e => handleFormChange('salespersonId', e.target.value)}>
-            <option value="">Select</option>
-            {data.salespersons.map(sp => (
-              <option key={sp.id} value={sp.id}>{sp.name}</option>
-            ))}
-          </select>
+        <label>
+          Customer Actual No.
+          <input type="text" value={form.customerActualNo} onChange={e => handleFormChange('customerActualNo', e.target.value)} />
         </label>
-
-        <label>Installer:
-          <select value={form.installerId} onChange={e => handleFormChange('installerId', e.target.value)}>
-            <option value="">Select</option>
-            {data.salespersons.map(sp => (
-              <option key={sp.id} value={sp.id}>{sp.name}</option>
-            ))}
-          </select>
+        <label>
+          Subtotal (Tax Excluded)
+          <input type="text" value={salesItem.subtotal.toFixed(2)} readOnly />
         </label>
-
-        <label>Default Warehouse:
+        <label>
+          Tax Amount
+          <input type="text" value={taxAmount.toFixed(2)} readOnly />
+        </label>
+        <label>
+          Total Amount
+          <input type="text" value={totalAmount.toFixed(2)} readOnly />
+        </label>
+        <label>
+          Paid Amount
+          <input type="text" value={form.paidAmount} onChange={e => handleFormChange('paidAmount', e.target.value)} />
+        </label>
+        <label>
+          Outstanding Amount
+          <input type="text" value={outstandingAmount.toFixed(2)} readOnly />
+        </label>
+        <label>
+          Settlement Date
+          <input type="date" value={form.settlementDate} onChange={e => handleFormChange('settlementDate', e.target.value)} />
+        </label>
+        <label>
+          Default Warehouse
           <select value={form.warehouseId} onChange={e => handleFormChange('warehouseId', e.target.value)}>
             <option value="">Select</option>
             {data.warehouses.map(w => (
@@ -110,51 +101,64 @@ const SalesForm = () => {
             ))}
           </select>
         </label>
-
-        <label>Is Borrowed:
+        <label className="checkbox-label">
+          Loaned Out?
           <input type="checkbox" checked={form.isBorrowed} onChange={e => handleFormChange('isBorrowed', e.target.checked)} />
+        </label>
+        <div className="radio-group">
+          <label><input type="radio" name="taxOption" checked={form.taxOption === 'Exempt'} onChange={() => handleFormChange('taxOption', 'Exempt')} /> Exempt</label>
+          <label><input type="radio" name="taxOption" checked={form.taxOption === 'Added'} onChange={() => handleFormChange('taxOption', 'Added')} /> Added</label>
+          <label><input type="radio" name="taxOption" checked={form.taxOption === 'Incl.'} onChange={() => handleFormChange('taxOption', 'Incl.')} /> Incl.</label>
+        </div>
+        <label>
+          Taxamnt
+          <input type="text" value={taxAmount.toFixed(2)} readOnly />
+        </label>
+        <label>
+          Tax Type
+          <select value={form.taxType} onChange={e => handleFormChange('taxType', e.target.value)}>
+            <option value="intno">Intno</option>
+          </select>
         </label>
       </div>
 
-      <div className="table-section">
-        <h3>Sales Details</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Product Code</th>
-              <th>Unit Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-              <th>Unit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <select value={salesItem.productId} onChange={e => handleItemChange('productId', e.target.value)}>
-                  <option value="">Select</option>
-                  {data.products.map(p => (
-                    <option key={p.id} value={p.id}>{p.name}</option>
-                  ))}
-                </select>
-              </td>
-              <td>{salesItem.price}</td>
-              <td>
-                <input
-                  type="number"
-                  value={salesItem.quantity}
-                  onChange={e => handleItemChange('quantity', parseInt(e.target.value) || 0)}
-                  min="0"
-                />
-              </td>
-              <td>{salesItem.subtotal.toFixed(2)}</td>
-              <td>{data.products.find(p => p.id === salesItem.productId)?.unit || ''}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h3>Sales Details</h3>
+      <table className="sales-table">
+        <thead>
+          <tr>
+            <th>Product Code</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select value={salesItem.productId} onChange={e => handleItemChange('productId', e.target.value)}>
+                <option value="">Select</option>
+                {data.products.map(p => (
+                  <option key={p.id} value={p.id}>{p.name}</option>
+                ))}
+              </select>
+            </td>
+            <td>{salesItem.price}</td>
+            <td>
+              <input
+                type="number"
+                value={salesItem.quantity}
+                onChange={e => handleItemChange('quantity', parseInt(e.target.value) || 0)}
+                min="0"
+              />
+            </td>
+            <td>{salesItem.subtotal.toFixed(2)}</td>
+            <td>{data.products.find(p => p.id === salesItem.productId)?.unit || ''}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default SalesForm;
+export default SalesEntry;
