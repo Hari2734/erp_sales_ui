@@ -21,28 +21,44 @@
   align-items: center;
 }
 
-.sidebar ul {
+.sidebar > ul {
   list-style: none;
   padding: 0;
   overflow: hidden;
+  padding-left: 20px;
 }
-
-.sidebar ul li {
+.sidebar > ul > li
+{
+  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+}
+.sidebar > ul > li > ul li{
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   color: #666;
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   width: 100%;
   font-size: 13px;
   padding-left: 20px;
+}
+.sidebar > ul > li > ul
+{
+  padding-left: 10px;
+}
+.sidebar > ul > li > ul li span
+{
+  width: 100%;
+  display: inline-block;
+  display: none;
 }
 .sidebar ul li img
 {
   width: 20px;
   margin-right: 10px;
 }
-.sidebar ul li:hover {
+.sidebar > ul li ul li:hover {
   background-color: #f45b432a;
 }

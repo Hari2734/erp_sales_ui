@@ -1,8 +1,9 @@
 import React from "react";
-import "../styles/Sidebar.css";
+import "../styles/Sidebar.css"; // Ensure this file exists and is correctly imported
 
-// Icons (can be replaced or extended)
-import Dashboard from "../assets/images/dashboard.png";
+// Icons (ensure the path to the image is correct)
+import Dashboard from "../assets/images/dashboard.png"; 
+import Purchase from "../assets/images/purchase.png"; 
 
 export default function Sidebar() {
   return (
@@ -11,23 +12,23 @@ export default function Sidebar() {
       <ul>
         <li className="main-item">
           <img src={Dashboard} alt="Routine Operations" />
-          Routine Operations
+          <span>Routine Operations</span> {/* Wrap text in a span for better structure */}
           <ul className="sub-menu">
-            <li>進貨作業 (Purchase Operation)</li>
-            <li>報價作業 (Quotation Operation)</li>
-            <li>廠商訂貨作業 (Supplier Order)</li>
-            <li>盤點作業 (Inventory Check)</li>
-            <li>車輛狀況記錄 (Vehicle Condition Record)</li>
-            <li>每日基本設定 (Daily Base Settings)</li>
-            <li>車輛加油記錄 (Vehicle Refueling Record)</li>
-            <li>瓦斯異動登錄 (Gas Stock Movement)</li>
-            <li>訊息通知 (Message Notification)</li>
-            <li>驗瓶資料匯入 (Bottle Inspection Import)</li>
-            <li>流量表登錄作業 (Flow Meter Entry)</li>
-            <li>調撥作業 (Transfer Operation)</li>
-            <li>卡車管理 (Truck Management)</li>
-            <li>送貨管理 (Delivery Management)</li>
-            <li>發票開立作業 (Invoice Issuance)</li>
+            <li> <img src={Purchase} alt="Purchase Operation" /> 進貨作業 <span>Purchase Operation</span></li>
+            <li>報價作業  <span>Quotation Operation</span></li>
+            <li>廠商訂貨作業  <span>Supplier Order</span></li>
+            <li>盤點作業  <span>Inventory Check</span></li>
+            <li>車輛狀況記錄  <span>Vehicle Condition Record</span></li>
+            <li>每日基本設定  <span>Daily Base Setting</span>s</li>
+            <li>車輛加油記錄  <span>Vehicle Refueling Record</span></li>
+            <li>瓦斯異動登錄  <span>Gas Stock Movement</span></li>
+            <li>訊息通知  <span>Message Notification</span></li>
+            <li>驗瓶資料匯入  <span>Bottle Inspection Import</span></li>
+            <li>流量表登錄作業  <span>Flow Meter Entry</span></li>
+            <li>調撥作業  <span>Transfer Operation</span></li>
+            <li>卡車管理  <span>Truck Management</span></li>
+            <li>送貨管理  <span>Delivery Management</span></li>
+            <li>發票開立作業  <span>Invoice Issuance</span></li>
           </ul>
         </li>
       </ul>

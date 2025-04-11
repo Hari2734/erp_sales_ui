@@ -8,4 +8,9 @@
   top: 0px;
   justify-content: right;
 }
+.header-btns button img {
+  width: 20px;
+  margin-right: 10px;
+  border: none;
+}
 
