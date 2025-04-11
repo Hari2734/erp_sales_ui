@@ -49,7 +49,7 @@ const SalesEntry = () => {
 
         <div className="form-grid">
           <label>
-          銷售單號
+            銷售單號
             <input
               type="text"
               value={form.salesOrderNo}
@@ -57,7 +57,7 @@ const SalesEntry = () => {
             />
           </label>
           <label>
-          銷售日期
+            銷售日期
             <input
               type="date"
               value={form.salesDate}
@@ -65,7 +65,7 @@ const SalesEntry = () => {
             />
           </label>
           <label>
-          客戶編號
+            客戶編號
             <select
               value={form.customerId}
               onChange={(e) => handleFormChange("customerId", e.target.value)}
@@ -79,7 +79,7 @@ const SalesEntry = () => {
             </select>
           </label>
           <label>
-          客戶實號
+            客戶實號
             <input
               type="text"
               value={form.customerActualNo}
@@ -89,15 +89,15 @@ const SalesEntry = () => {
             />
           </label>
           <label>
-          未稅小計
+            未稅小計
             <input type="text" value={salesItem.subtotal.toFixed(2)} readOnly />
           </label>
           <label>
-          稅額
+            稅額
             <input type="text" value={taxAmount.toFixed(2)} readOnly />
           </label>
           <label>
-          金額合計
+            金額合計
             <input type="text" value={totalAmount.toFixed(2)} readOnly />
           </label>
           <label>
@@ -109,11 +109,11 @@ const SalesEntry = () => {
             />
           </label>
           <label>
-          未結金額
+            未結金額
             <input type="text" value={outstandingAmount.toFixed(2)} readOnly />
           </label>
           <label>
-          結清日期
+            結清日期
             <input
               type="date"
               value={form.settlementDate}
@@ -123,7 +123,7 @@ const SalesEntry = () => {
             />
           </label>
           <label>
-          預設倉庫
+            預設倉庫
             <select
               value={form.warehouseId}
               onChange={(e) => handleFormChange("warehouseId", e.target.value)}
@@ -152,7 +152,7 @@ const SalesEntry = () => {
           </label>
 
           <label className="checkbox-label">
-          是否借出
+            是否借出
             <input
               type="checkbox"
               checked={form.isBorrowed}
@@ -189,11 +189,11 @@ const SalesEntry = () => {
             </label>
           </div>
           <label>
-          稅額
+            稅額
             <input type="text" value={taxAmount.toFixed(2)} readOnly />
           </label>
           <label>
-          稅別
+            稅別
             <select
               value={form.taxType}
               onChange={(e) => handleFormChange("taxType", e.target.value)}

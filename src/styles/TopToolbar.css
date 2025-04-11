@@ -8,20 +8,21 @@
   top: 0px;
   justify-content: right;
 }
-.header-btns 
-{
+
+.header-btns {
   background-color: #f0e9e1;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
 }
+
 .header-btns button img {
   width: 20px;
   margin-right: 10px;
   border: none;
 }
-.header-btns button
-{
+
+.header-btns button {
   background-color: #fff;
   border: 1px solid #ccc;
   display: inline-flex;
@@ -33,15 +34,17 @@
   transition: all .5s;
   margin-right: 10px;
 }
-.header-btns button:hover
-{
+
+.header-btns button:hover {
   background: linear-gradient(to right, #eb3349, #f45c43);
   color: #fff;
 }
+
 .header-nav {
   background-color: #fff;
   /* padding: 10px 20px; */
 }
+
 .menu-bar {
   display: flex;
   list-style: none;
@@ -62,6 +65,7 @@
   border-radius: 4px;
   transition: all .5s;
 }
+
 .menu-bar li:hover {
   background-color: #f0e9e1;
   color: #000;

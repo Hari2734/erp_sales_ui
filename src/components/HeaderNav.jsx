@@ -11,7 +11,6 @@ export default function HeaderNav() {
         <li><i className="fas fa-clipboard-list"></i> 報表作業</li>
         <li><i className="fas fa-search"></i> 系統設定</li>
         <li><i className="fas fa-user"></i> 使用者</li>
-
       </ul>
     </div>
   );

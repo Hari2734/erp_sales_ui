@@ -2,22 +2,22 @@ import React from "react";
 import "../styles/Sidebar.css"; // Ensure this file exists and is correctly imported
 
 // Icons (ensure the path to the image is correct)
-import Dashboard from "../assets/images/dashboard.png"; 
-import Purchase from "../assets/images/purchase.png"; 
-import Quotation from "../assets/images/quotation.png"; 
-import Supplier from "../assets/images/supplier.png"; 
-import Inventory from "../assets/images/inventory.png"; 
-import Vehicle from "../assets/images/vehicle.png"; 
-import Settings from "../assets/images/settings.png"; 
-import Notification from "../assets/images/notification.png"; 
-import Vehiclefuel from "../assets/images/vehiclefuel.png"; 
-import Gas from "../assets/images/gas.png"; 
-import Bottle from "../assets/images/bottle.png"; 
-import Flowmeter from "../assets/images/flowmeter.png";  
-import Transfer from "../assets/images/transfer.png"; 
-import Truck from "../assets/images/truck.png"; 
-import Delivery from "../assets/images/delivery.png"; 
-import Invoice from "../assets/images/invoice.png"; 
+import Dashboard from "../assets/images/dashboard.png";
+import Purchase from "../assets/images/purchase.png";
+import Quotation from "../assets/images/quotation.png";
+import Supplier from "../assets/images/supplier.png";
+import Inventory from "../assets/images/inventory.png";
+import Vehicle from "../assets/images/vehicle.png";
+import Settings from "../assets/images/settings.png";
+import Notification from "../assets/images/notification.png";
+import Vehiclefuel from "../assets/images/vehiclefuel.png";
+import Gas from "../assets/images/gas.png";
+import Bottle from "../assets/images/bottle.png";
+import Flowmeter from "../assets/images/flowmeter.png";
+import Transfer from "../assets/images/transfer.png";
+import Truck from "../assets/images/truck.png";
+import Delivery from "../assets/images/delivery.png";
+import Invoice from "../assets/images/invoice.png";
 
 
 export default function Sidebar() {
