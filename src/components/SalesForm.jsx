@@ -45,7 +45,7 @@ const SalesEntry = () => {
   return (
     <>
       <div className="sales-entry-container">
-        <h2>Sales Entry</h2>
+        <h2>銷售主檔</h2>
 
         <div className="form-grid">
           <label>
@@ -70,7 +70,7 @@ const SalesEntry = () => {
               value={form.customerId}
               onChange={(e) => handleFormChange("customerId", e.target.value)}
             >
-              <option value="">Select</option>
+              <option value="">選擇</option>
               {data.customers.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
@@ -128,7 +128,7 @@ const SalesEntry = () => {
               value={form.warehouseId}
               onChange={(e) => handleFormChange("warehouseId", e.target.value)}
             >
-              <option value="">Select</option>
+              <option value="">選擇</option>
               {data.warehouses.map((w) => (
                 <option key={w.id} value={w.id}>
                   {w.name}
@@ -142,7 +142,7 @@ const SalesEntry = () => {
               value={form.installerId}
               onChange={(e) => handleFormChange("installerId", e.target.value)}
             >
-              <option value="">Select</option>
+              <option value="">選擇</option>
               {data.salespersons.map((sp) => (
                 <option key={sp.id} value={sp.id}>
                   {sp.name}
@@ -203,7 +203,7 @@ const SalesEntry = () => {
           </label>
         </div>
 
-        <h3>Sales Details</h3>
+        <h3>銷售明細</h3>
         <table className="sales-table">
           <thead>
             <tr>
@@ -223,7 +223,7 @@ const SalesEntry = () => {
                     handleItemChange("productId", e.target.value)
                   }
                 >
-                  <option value="">Select</option>
+                  <option value="">選擇</option>
                   {data.products.map((p) => (
                     <option key={p.id} value={p.id}>
                       {p.name}
