@@ -1,3 +1,4 @@
+/* Sidebar styles */
 .sidebar {
   width: 220px;
   background-color: #fff;
@@ -26,18 +27,32 @@
   padding: 0;
   overflow: hidden;
   padding-left: 20px;
+  overflow-y: auto;
 }
 
 .sidebar>ul>li {
   color: #666;
   font-size: 13px;
   font-weight: 600;
+  position: relative;
+}
+
+.sidebar>ul>li::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: calc(100% - 36px);
+  border-left: 2px dotted #999;
+  left: 8px;
+  top: 20px;
+  opacity: 0.5;
+  transition: all 0.5s;
 }
 
 .sidebar>ul>li>ul li {
   padding: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.5s;
   color: #666;
   display: inline-flex;
   align-items: center;
@@ -46,6 +61,20 @@
   font-size: 13px;
   padding-left: 10px;
   border-left: transparent 3px solid;
+  position: relative;
+}
+
+.sidebar>ul>li>ul li::before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 1px;
+  border-top: 2px dotted #999;
+  left: -5px;
+  top: 20px;
+  opacity: 0.5;
+  transition: all 0.5s;
+  z-index: 99;
 }
 
 .sidebar>ul>li>ul {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/ErpSales.css"; // Assuming you have a CSS file for styling
+import "../styles/SalesForm.css"; // Assuming you have a CSS file for styling
 import data from "./data.json";
 
 const SalesEntry = () => {

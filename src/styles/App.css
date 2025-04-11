@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');/* Global Font */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');/* Material Icon Font */
+/*
+ * Global styles
+ */
 body {
   margin: 0;
   padding: 0;
@@ -29,7 +31,8 @@ body {
 .content {
   padding: 20px;
 }
-
+/* End of Global styles */
+/* Button styles */
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -108,3 +111,4 @@ body {
   background-color: #b98c33;
   border-color: #f3c363;
 }
+/* Button styles end */
