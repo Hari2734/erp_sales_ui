@@ -23,11 +23,11 @@ import Invoice from "../assets/images/invoice.png";
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>ERP 系統</h2>
+      <h2>系統</h2>
       <ul>
         <li className="main-item">
           <img src={Dashboard} alt="Routine Operations" />
-          <span>Routine Operations</span> {/* Wrap text in a span for better structure */}
+          <span>例行作業</span> {/* Wrap text in a span for better structure */}
           <ul className="sub-menu">
             <li> <img src={Purchase} alt="Purchase Operation" /> 進貨作業 <span>Purchase Operation</span></li>
             <li><img src={Quotation} alt="Quotation Operation" /> 報價作業  <span>Quotation Operation</span></li>
