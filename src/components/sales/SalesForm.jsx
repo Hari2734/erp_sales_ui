@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/SalesForm.css"; // Import the external CSS styles
-import data from "./data.json"; // Import static JSON data for dropdowns
+import "../../styles/SalesForm.css"; // Import the external CSS styles
+import data from "../../data/data.json"; // Import static JSON data for dropdowns
 
 const SalesEntry = () => {
   // Form state for the main sales order

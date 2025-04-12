@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Sidebar.css"; // or your custom CSS
+import "../../styles/Sidebar.css"; // or your custom CSS
 
 export default function HeaderNav() {
   return (
