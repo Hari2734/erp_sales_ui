@@ -15,12 +15,12 @@ export default function TopToolbar() {
         <HeaderNav />
       </div>
       <div className="header-btns">
-        <button><img src={Msystem} />管理系統</button>
-        <button><img src={Package} />分裝作業</button>
-        <button><img src={Ledger} />會計總帳</button>
-        <button><img src={Callerid} />來電顯示</button>
-        <button><img src={Notification} />訊息通知</button>
-        <button><img src={Customers} />使用者</button>
+        <button><img src={Msystem} alt="管理系統" />管理系統</button>
+        <button><img src={Package} alt="分裝作業" />分裝作業</button>
+        <button><img src={Ledger} alt="會計總帳" />會計總帳</button>
+        <button><img src={Callerid} alt="來電顯示" />來電顯示</button>
+        <button><img src={Notification} alt="訊息通知" />訊息通知</button>
+        <button><img src={Customers} alt="使用者" />使用者</button>
       </div>
     </>
   );
