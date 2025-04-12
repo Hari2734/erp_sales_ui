@@ -16,9 +16,6 @@ const initialValues = {
   taxAmount: 0,
   totalAmount: 0,
   outstandingAmount: 0,
-  taxAmount:0,
-  totalAmount:0,
-  outstandingAmount:0
 }
 
 const SalesEntry = () => {
