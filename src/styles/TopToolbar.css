@@ -1,3 +1,4 @@
+/* TopToolbar.css */
 .top-toolbar {
   background-color: #fff;
   padding: 15px;
@@ -7,5 +8,71 @@
   min-height: 31px;
   top: 0px;
   justify-content: right;
+}
+.header-nav {
+  background-color: #fff;
+  /* padding: 10px 20px; */
+}
+
+.menu-bar {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar li {
+  margin-right: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #666;
+  font-size: 13px;
+  border: 1px solid #dfdfdf;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all .5s;
+}
+
+.menu-bar li:hover {
+  background-color: #f0e9e1;
+  color: #000;
+}
+
+.menu-bar i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+/* Submenu styles */
+.header-btns {
+  background-color: #f0e9e1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+}
+
+.header-btns button img {
+  width: 20px;
+  margin-right: 10px;
+  border: none;
+}
+
+.header-btns button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .5s;
+  margin-right: 10px;
+}
+
+.header-btns button:hover {
+  background: linear-gradient(to right, #eb3349, #f45c43);
+  color: #fff;
 }
 

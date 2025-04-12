@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
-import TopToolbar from "./components/TopToolbar";
-import SalesForm from "./components/SalesForm";
+import Sidebar from "./components/layout/Sidebar";
+import TopToolbar from "./components/layout/TopToolbar";
+import SalesForm from "./components/sales/SalesForm";
 import "./styles/App.css";
 
 export default function App() {

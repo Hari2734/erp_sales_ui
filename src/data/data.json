@@ -2,58 +2,58 @@
     "customers": [
     {
     "id": "C001",
-    "name": "Taipei Trading Company"
+    "name": "台北貿易行"
     },
     {
     "id": "C002",
-    "name": "Taichung Xinfeng Enterprise"
+    "name": "台中鑫豐企業"
     },
     {
     "id": "C003",
-    "name": "Kaohsiung Electric Works Company"
+    "name": "高雄電工社"
     }
     ],
     "salespersons": [
     {
     "id": "S01",
-    "name": "Wang Xiaoming"
+    "name": "王小明"
     },
     {
     "id": "S02",
-    "name": "Chen Meihua"
+    "name": "陳美華"
     }
     ],
     "warehouses": [
     {
     "id": "W01",
-    "name": "Warehouse No. 1"
+    "name": "一號倉"
     },
     {
     "id": "W02",
-    "name": "Supply Warehouse"
+    "name": "備品倉"
     },
     {
     "id": "W03",
-    "name": "Oil Products Area"
+    "name": "油品區"
     }
     ],
     "products": [
     {
     "id": "P001",
-    "name": "Diesel",
-    "unit": "liter",
+    "name": "柴油",
+    "unit": "公升",
     "price": 32.5
     },
     {
     "id": "P002",
-    "name": "Gear Oil",
-    "unit": "bottle",
+    "name": "齒輪油",
+    "unit": "瓶",
     "price": 180
     },
     {
     "id": "P003",
-    "name": "Engine Oil",
-    "unit": "barrel",
+    "name": "引擎潤滑油",
+    "unit": "桶",
     "price": 1500
     }
     ]
