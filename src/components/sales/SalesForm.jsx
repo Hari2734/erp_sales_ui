@@ -150,7 +150,7 @@ const SalesEntry = () => {
 
           <label>
             {/* Label text for the dropdown, showing both Chinese and English */}
-            預設倉庫 (Warehouse)
+            預設倉庫
             {/* Dropdown to select a warehouse */}
             <select
               value={form.warehouseId} // Binds the selected value to form.warehouseId
