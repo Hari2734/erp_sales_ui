@@ -2,23 +2,28 @@ import React, { useState, useEffect } from "react";
 import "../../styles/SalesForm.css"; // Import the external CSS styles
 import data from "../../data/data.json"; // Import static JSON data for dropdowns
 
+const initialValues = {
+  salesOrderNo: "",
+  salesDate: "2023-09-19",
+  customerId: "",
+  customerActualNo: "",
+  paidAmount: "",
+  settlementDate: "",
+  warehouseId: "",
+  isBorrowed: false,
+  taxType: "內部編號",
+  taxOption: "免稅",
+  taxAmount: 0,
+  totalAmount: 0,
+  outstandingAmount: 0,
+  taxAmount:0,
+  totalAmount:0,
+  outstandingAmount:0
+}
+
 const SalesEntry = () => {
   // Form state for the main sales order
-  const [form, setForm] = useState({
-    salesOrderNo: "",
-    salesDate: "2023-09-19",
-    customerId: "",
-    customerActualNo: "",
-    paidAmount: "",
-    settlementDate: "",
-    warehouseId: "",
-    isBorrowed: false,
-    taxType: "內部編號",
-    taxOption: "免稅",
-    taxAmount: 0,
-    totalAmount: 0,
-    outstandingAmount: 0,
-  });
+  const [form, setForm] = useState(initialValues);
 
   // State for a single sales item (product)
   const [salesItem, setSalesItem] = useState({
@@ -54,11 +59,6 @@ const SalesEntry = () => {
   const handleItemChange = (field, value) => {
     setSalesItem((prev) => ({ ...prev, [field]: value }));
   };
-
-  // Calculate dynamic financial values
-  const taxAmount = form.taxOption === "Added" ? salesItem.subtotal * 0.1 : 0;
-  const totalAmount = salesItem.subtotal + taxAmount;
-  const outstandingAmount = totalAmount - (parseFloat(form.paidAmount) || 0);
 
   return (
     <>
@@ -118,12 +118,12 @@ const SalesEntry = () => {
 
           <label>
             稅額
-            <input type="text" value={taxAmount.toFixed(2)} readOnly />
+            <input type="text" value={form?.taxAmount.toFixed(2)} readOnly />
           </label>
 
           <label>
             金額合計
-            <input type="text" value={totalAmount.toFixed(2)} readOnly />
+            <input type="text" value={form?.totalAmount.toFixed(2)} readOnly />
           </label>
 
           <label>
@@ -137,7 +137,7 @@ const SalesEntry = () => {
 
           <label>
             未結金額
-            <input type="text" value={outstandingAmount.toFixed(2)} readOnly />
+            <input type="text" value={form?.outstandingAmount.toFixed(2)} readOnly />
           </label>
 
           <label>
